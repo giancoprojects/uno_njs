@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+html,body{
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    background-color: rgb(5, 64, 5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eeee;
+}
+
+a{
+    text-decoration: none;
+    padding: 10px;
+    color:#eeee;
+    border-radius: 10px;
+}
+
+.gameWait, #colorChooser, #winnerContainer{
+    position:absolute;
+    width: 100vw;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.598);
+    display:flex;
+}
+
+.cont{
+    margin: auto;
+    text-align: center;
+    background: rgb(39, 39, 39);
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    display: grid;
+    align-content: space-evenly;
+    justify-content: center;
+}
+
+.notification{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 300px;
+    z-index: 1;
+    text-align: center;
+    align-content: center;
+    display: grid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#chatBtn{
+    position:absolute;
+    display: flex;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 65px;
+    background:dodgerblue;
+    border-radius: 50px;
+    z-index: 1;
+    cursor: pointer;
+}
+#chatBtn *{margin:auto}
+
+#chat{
+    position:absolute;
+    display: grid;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    height: 500px;
+    background: rgb(22, 22, 22);
+    z-index: 1;
+    align-content: space-between;
+}
+
+#chat .title{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    background-color: rgb(41, 40, 40);
+}
+
+#chat .title *{margin:auto}
+
+#chat #chatMessages{
+    display: grid;
+    gap: 10px;
+    height: 400px;
+    padding: 5px;
+    overflow-y: scroll;
+    align-content: end;
+}
+#chat #chatMessages span{color:deepskyblue;}
+#chat input{height: 30px;}
+#chat input[type="text"]{width: 85%;}
+
+#gameTable{
+    display:flex;
+    flex-flow: row wrap;
+}
+.box{
+    /*flex: 1 0 33%;
+    min-height: 33.3vh;*/
+    position: absolute;
+    /*border: 1px solid black;*/
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    gap: 10px;
+}
+.box.table{
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    transition: all ease-in-out 0.3s;
+    flex-direction: row;
+    gap: 20px;
+}
+.table:hover{
+    gap: 70px;
+}
+.box.main{
+    transform: translate(-50%);
+    left: 50%;
+    bottom: 0;
+}
+.box.one{
+    left: 0;
+    bottom: 50%;
+    transform: translate(0, 50%);
+}
+
+.box.two{
+    transform: translate(-50%);
+    left: 50%;
+    top: 0;
+}
+.box.three{
+    right: 0;
+    bottom: 50%;
+    transform: translate(0, 50%);
+}
+
+.box.winner{
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    transition: all ease-in-out 0.5s;
+}
+
+.usrInfo{
+    display:grid;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.usrCircle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: chocolate;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+.usrCards, #colorChooser_cards{
+    padding: 20px;
+    display:flex;
+    transform: translateX(-20px);
+    justify-content: center;
+}
+
+.card, .bCard{
+    transition:all ease-in-out 0.3s;
+    width: 45px;
+    z-index: 1;
+}
+
+.card.player:hover{
+    cursor: pointer;
+    width: 100px;
+    transform: translateY(-20px);
+}
+.card.player.disable{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.username{
+    text-align: center;
+    padding: 10px;
+    background-color:brown;
+    border-radius: 10px;
+    display:flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#assetsDownloader{
+    position:absolute;
+    display:grid;
+    text-align: center;
+    padding: 20px;
+    transform: translate(-50%);
+    border-radius: 10px;
+    left: 50%;
+    bottom: 20px;
+    background-color:rgb(39, 39, 39);
+    border: 2px solid gray;
+    z-index: 2;
+}
+
+.usrTimer{
+    height: 50px;
+    background-color: black;
+    text-align: center;
+}
+
+.usrTurn{
+    animation-name: usrTurnAnim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#cardPicker{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+#cardPicker:hover #cardPicker_status{
+    display:block;
+}
+
+#cardPicker_status{
+    display:none;
+    position: absolute;
+    color: #ffb700;
+    top: -40px;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.cardAction{
+    position:absolute;
+    padding: 5px;
+    background-color: black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.lastCard{
+    width: 64px;
+    animation-name: lastCardAnim;
+    animation-duration:  2s;
+}
+
+
+.debugger{
+    position:absolute;
+    display: grid;
+    text-align: center;
+    bottom: 0;
+    padding: 5px;
+    opacity: 0.5;
+    font-size: small;
+    z-index: 999;
+}
+
+@keyframes usrTurnAnim {
+    50%{transform: scale(1.2); background-color: #6c1919;}
+    100%{transform: scale(1)}
+}
+
+@keyframes lastCardAnim {
+    50%{transform:scale(3)}
+    100%{transform:scale(1)}
+}

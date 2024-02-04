@@ -1,0 +1,5 @@
+TUTTE LE COSE RICHIESTE:
+Video parzialmente seguito: https://www.youtube.com/watch?v=4GQCkW23rTU
+
+comandi per installare robe:
+npm i --save express express-session socket.io ejs

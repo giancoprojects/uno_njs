@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/game.css">
+    <script src="https://kit.fontawesome.com/a4c5d81377.js" crossorigin="anonymous"></script>
+    <title>Uno - Game</title>
+</head>
+
+<body id="body">
+    <div class="debugger">
+        <p><u>Uno v.0.1</u></p>
+        <p style="color:yellow">Debug attivo</p>
+        <p>Copyright GiancoProjects.</p>
+    </div>
+    <div id="assetsDownloader">
+        <h4>Download assets necessari..</h4>
+        <p id="assetsStatus" style="color:chocolate"></p>
+    </div>
+    <div id="chatBtn" onclick="openChat()">
+        <h3>💬Chat</h3>
+    </div>
+    <div id="chat" style="display:none">
+        <div class="title">
+            <h3>Game chat</h3>
+            <h4 style="color:yellow;cursor:pointer" onclick="closeChat()">[Chiudi]</h4>
+        </div>
+        <div id="chatMessages">
+        </div>
+        <form action="" id="chatForm">
+            <input type="text" name="chatMsg" id="chatMsg" placeholder="Scrivi un messaggio...">
+            <input type="submit" value=" Invia " id="chatInput">
+        </form>
+    </div>
+    <div class="gameWait" id="gameWait">
+        <div class="cont" id="gwCont">
+            <img src="imgs/logo.png" alt="" style="width: 150px; margin:auto;">
+            <span>
+                <h2>Codice / Link</h2>
+                <p id="gwCode"></p>
+                <p id="gwLink"></p>
+            </span>
+            <span id="gwPlayers">
+            </span>
+            <span>
+                <h2 id="gwState"></h2>
+            </span>
+        </div>
+    </div>
+    <div id="gameTable" style="display:none">
+        <div class="box"></div>
+        <div class="box two" name="pl2_box">
+            <p class="username" name="pl2_username"><i class="fa-solid fa-user"></i> pl2</p>
+            <div class="usrCards" name="pl2_cards"></div>
+        </div>
+        <div class="box"></div>
+        <div class="box one" name="pl1_box">
+            <p class="username" name="pl1_username"><i class="fa-solid fa-user"></i> pl1</p>
+            <div class="usrCards" name="pl1_cards"></div>
+        </div>
+        <div class="box table">
+            <div id="cardsTable"></div>
+            <div id="cardPicker">
+                <p id="cardPicker_status">Attendi il tuo round</p>
+                <img src="imgs/deck/back.png" alt="" style="width: 75px">
+            </div>
+        </div>
+        <div class="box three" name="pl3_box">
+            <p class="username" name="pl3_username"><i class="fa-solid fa-user"></i> pl3</p>
+            <div class="usrCards" name="pl3_cards"></div>
+        </div>
+        <div class="box"></div>
+        <div class="box main" name="pl0_box">
+            <p class="username" name="pl0_username"><i class="fa-solid fa-user"></i> mainP</p>
+            <div class="usrCards disable" name="pl0_cards"></div>
+        </div>
+        <div class="box"></div>
+    </div>
+    <div id="colorChooser" style="display: none">
+        <div class="cont">
+            <h2>Seleziona colore</h2>
+            <div id="colorChooser_cards"></div>
+        </div>
+    </div>
+    <div id="winnerContainer" style="display:none">
+        <div class="cont">
+            <h3>Fine partita</h3>
+            <img src="imgs/logo.png" alt="" style="width: 150px; margin:auto;">
+            <span>
+                <h1 id="winner_username" style="color:gold">n/A</h1>
+                <h2>Ha vinto la partita!</h2>
+            </span>
+            <a href="/" style="background: green;">Home</a>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/gameWait.js"></script>
+    <script src="js/inGame.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/assets.js"></script>
+</body>
+
+</html>

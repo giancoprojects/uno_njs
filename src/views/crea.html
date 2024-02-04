@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uno - Crea partita</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background-color: black;
+            display: flex;
+            color: #eeee;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .cont {
+            margin: auto;
+            width: 500px;
+            height: 500px;
+            display: grid;
+        }
+
+        .cont * {
+            margin: auto;
+        }
+
+        form {
+            background: rgb(53, 51, 51);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            display: grid;
+        }
+
+        form input[type="submit"] {
+            padding: 10px;
+            background: green;
+            color: #eeee;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <img src="imgs/logo.png" alt="" style="width: 200px;">
+        <form action="" method="post">
+            <p>Username</p>
+            <input type="text" name="username" id="username" maxlength="16"> <br>
+            <p>Numero giocatori</p>
+            <select name="nGiocatori" id="nGiocatori">
+                <option value="2">2 Player</option>
+                <option value="4">4 Player</option>
+            </select> <br>
+            <input type="submit" value=" Crea partita ">
+            <%if(error != null){%>
+                <br><p style="color:red"><%=error%></p><%}%>
+        </form>
+    </div>
+</body>
+
+</html>
