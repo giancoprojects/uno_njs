@@ -270,7 +270,7 @@ app.route("/crea")
 
 
 app.use(express.static("public"));
-httpServer.listen(80);
+httpServer.listen(1000);
 console.log("UNO GAME [NodeJS Edition]");
 console.log("Made by: Giangio");
 console.log("Per problemi: @Scioccolato <- Telegram");
