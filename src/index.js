@@ -7,7 +7,6 @@ const { connect } = require('http2');
 let { Server } = require("socket.io");
 let path = require('path');
 let utils = require('./utils.js');
-let ktm = require("./test.js");
 
 
 let app = express();
@@ -275,5 +274,4 @@ console.log("UNO GAME [NodeJS Edition]");
 console.log("Made by: Giangio");
 console.log("Per problemi: @Scioccolato <- Telegram");
 cards.createDefaultDeck();
-//ktm.kitemmurt();
 utils.generateDeckAssets();
