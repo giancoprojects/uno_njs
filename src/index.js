@@ -277,5 +277,3 @@ console.log("Per problemi: @Scioccolato <- Telegram");
 cards.createDefaultDeck();
 //ktm.kitemmurt();
 utils.generateDeckAssets();
-
-
