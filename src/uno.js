@@ -157,6 +157,13 @@ class uno_game{
 
     //METTE UNA CARTA SUL TAVOLO
     putCardOnTable(index, deck){
+        if(deck[index].valore === "cambioColore" || deck[index].valore === "+4"){
+            if(deck[index].colore == null){
+                let colors = ["giallo", "verde", "rosso", "blu"];
+                let rand = Math.floor(Math.random() * colors.length);
+                deck[index].colore = colors[rand];
+            }
+        }
         this.usedDeck.unshift(deck[index]);
         deck.splice(index, 1);
         this.sendSocketMsgToAll("ig",
