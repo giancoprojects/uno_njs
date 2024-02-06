@@ -60,6 +60,7 @@ class uno_game{
         if(this.players.length <= 0){
             console.log("condizione dimensione 0");
             this.removeGame();
+            return;
         }
         if(plTurn === player){
             console.log("CONDIZIONE REMOVE PLAYER DURANTE TURNO VERIFICATA");
@@ -303,7 +304,7 @@ class uno_game{
     }
 
     setCurrentTurn(numOfSkips){
-        console.log("setTurn chiamato.");
+        //console.log("setTurn chiamato.");
         if(this.igSched !== null) clearTimeout(this.igSched);
         let prevPl = this.getPlayerTurn();
         if(numOfSkips === null) this.currentTurn = 0;
