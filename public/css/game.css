@@ -131,8 +131,7 @@ a{
     display:flex;
     flex-direction: column;
     align-items: center;
-    padding: 5px;
-    gap: 10px;
+    will-change: transform;
 }
 .box.table{
     left: 50%;
@@ -153,7 +152,8 @@ a{
 .box.one{
     left: 0;
     bottom: 50%;
-    transform: translate(0, 50%);
+    transform: translate(-25%, -25%);
+    rotate: 270deg;
 }
 
 .box.two{
@@ -164,7 +164,8 @@ a{
 .box.three{
     right: 0;
     bottom: 50%;
-    transform: translate(0, 50%);
+    transform: translate(25%, -25%);
+    rotate: 90deg;
 }
 
 .box.winner{
@@ -191,11 +192,12 @@ a{
     justify-content: center;
 }
 
-.usrCards, #colorChooser_cards{
+.usrCards, .otherCards, #colorChooser_cards{
     padding: 20px;
     display:flex;
     transform: translateX(-20px);
     justify-content: center;
+    align-items: center;
 }
 
 .card, .bCard{
@@ -307,4 +309,13 @@ a{
 @keyframes lastCardAnim {
     50%{transform:scale(3)}
     100%{transform:scale(1)}
+}
+
+@media screen and (max-width: 900px){
+    .box.one {
+        left: -125px;
+    }
+    .box.three {
+        right: -125px;
+    }
 }

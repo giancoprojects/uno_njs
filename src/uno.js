@@ -358,7 +358,7 @@ class uno_game{
     getStringPlayerList(){
         let plList = "";
         for(let i = 0; i < this.players.length; i++){
-            if(i == this.players.length - 1)  plList += this.players[i].username;
+            if(i === this.players.length - 1)  plList += this.players[i].username;
             else plList += this.players[i].username + "|";
         }
         return plList;    
