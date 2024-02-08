@@ -336,4 +336,7 @@ a{
         top: 0;
         left: 0;
     }
+    .box.winner{
+        transform: translate(-70%, 70%);
+    }
 }
