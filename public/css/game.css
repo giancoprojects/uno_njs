@@ -312,10 +312,28 @@ a{
 }
 
 @media screen and (max-width: 900px){
+    .box{
+        scale: 0.7;
+    }
+
+    .box.main{
+        transform:translate(-70%, 20%);
+    }
+
+    .box.two{
+        transform: translate(-70%, -20%);
+    }
     .box.one {
         left: -125px;
+        transform: translate(-40%, -40%);
     }
     .box.three {
         right: -125px;
+        transform: translate(40%, -40%);
+    }
+    #chatBtn{
+        scale: 0.7;
+        top: 0;
+        left: 0;
     }
 }
