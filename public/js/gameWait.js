@@ -28,7 +28,11 @@ function setupMenu(data) {
     console.log("Imposto menu gameWait");
     let dataSpliced = data.split(":");
     document.getElementById("gwCode").innerHTML = dataSpliced[1];
-    document.getElementById("gwLink").innerHTML = document.location.origin + "/entra?code=" + dataSpliced[1];
+    // document.getElementById("gwLink").innerHTML = document.location.origin + "/entra?code=" + dataSpliced[1];
+    document.getElementById("gwLink").onclick = () =>{
+        navigator.clipboard.writeText(document.location.origin + "/entra?code=" + dataSpliced[1])
+            .then(r => sendNotification("green", "Link copiato negli appunti."));
+    };
     if(dataSpliced[3] === "waiting") abortGameStarting();
     else setGameStarting();
     let players = dataSpliced[4].split("|");

@@ -48,6 +48,14 @@ a{
     display:flex;
 }
 
+#gwLink{
+    padding: 5px;
+    background-color: #6c1919;
+    border-radius: 10px;
+    margin: 5px;
+    cursor:pointer;
+}
+
 .cont{
     margin: auto;
     text-align: center;
