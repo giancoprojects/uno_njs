@@ -14,8 +14,13 @@
         <h4>Download assets necessari..</h4>
         <p id="assetsStatus" style="color:chocolate"></p>
     </div>
-    <div id="chatBtn" onclick="openChat()">
-        <h3>💬Chat</h3>
+    <div class="controls">
+        <div id="chatBtn" onclick="openChat()">
+            <i class="fa-solid fa-comments"></i>
+        </div>
+        <div id="settingsBtn" onclick="openSettings()">
+            <i class="fa-solid fa-sliders"></i>
+        </div>
     </div>
     <div id="chat" style="display:none">
         <div class="title">
@@ -90,11 +95,34 @@
             <a href="/" style="background: green;">Home</a>
         </div>
     </div>
+    <div id="settings" class="closed">
+        <div id="settings_music" class="item" onclick="toggleMusic()">
+            <i class="fa-solid fa-music"></i>
+            <p>Musica</p>
+        </div>
+        <div id="settings_audio" class="item" onclick="toggleAudio()">
+            <i class="fa-solid fa-volume-high"></i>
+            <p>Audio</p>
+        </div>
+        <div id="settings_info" class="item" onclick="alert('Sinceramend m so rott u cazz. Quando avrò voglia creo questa sezione.')">
+            <i class="fa-solid fa-info"></i>
+            <p>Info</p>
+        </div>
+        <div class="closeBtn" onclick="closeSettings()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+    <div id="firstDiv" onclick="setFirstInteraction()">
+        <img src="imgs/cat2.png" alt="">
+        <p>Clicca il micietto per iniziare</p>
+        <p style="color:gray">Questa prima interazione serve per consentire al tuo browser di riprodurre l'audio del gioco.</p>
+    </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/gameWait.js"></script>
     <script src="js/inGame.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/chat.js"></script>
+    <script src="js/audio.js"></script>
     <script src="js/main.js"></script>
     <script src="js/assets.js"></script>
 </body>

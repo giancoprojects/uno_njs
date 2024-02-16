@@ -81,19 +81,22 @@ a{
     padding: 5px;
 }
 
-#chatBtn{
+.controls{
     position:absolute;
+    z-index: 4;
     display: flex;
-    bottom: 10px;
-    right: 10px;
-    width: 100px;
-    height: 65px;
-    background:dodgerblue;
+    gap: 5px;
+    top: 10px;
+    left: 10px;
+}
+
+#chatBtn, #settingsBtn{
+    padding: 10px;
+    background-color: #2f2d2d;
     border-radius: 50px;
-    z-index: 1;
     cursor: pointer;
 }
-#chatBtn *{margin:auto}
+
 
 #chat{
     position:absolute;
@@ -102,6 +105,7 @@ a{
     right: 10px;
     width: 300px;
     height: 500px;
+    border-radius: 20px;
     background: rgb(22, 22, 22);
     z-index: 1;
     align-content: space-between;
@@ -126,7 +130,19 @@ a{
 }
 #chat #chatMessages span{color:deepskyblue;}
 #chat input{height: 30px;}
-#chat input[type="text"]{width: 85%;}
+#chat input[type="text"]{
+    width: 85%;
+    background-color: #2f2d2d;
+    border: 0;
+    text-align: center;
+    color:azure;
+}
+#chat input[type="submit"]{
+    background-color: #2f2d2d;
+    border: 0;
+    text-align: center;
+    color:azure;
+}
 
 #gameTable{
     display:flex;
@@ -310,6 +326,83 @@ a{
     z-index: 999;
 }
 
+#settings{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 3;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    bottom:0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    animation-name: settingsFadeIn;
+    animation-duration: 0.5s;
+}
+
+#settings.closed{
+    animation-name: settingsFadeOut;
+    animation-duration: 0.5s;
+    display: none;
+}
+#settings .item{
+    display:grid;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid azure;
+    padding: 20px;
+    cursor:pointer;
+    border-radius: 10px;
+}
+
+#settings .item.enabled{
+    border-color:green;
+    color: green;
+}
+
+#settings .item.disabled{
+    border-color:brown;
+    color:brown;
+}
+
+#settings .closeBtn{
+    position:absolute;
+    background-color: brown;
+    text-align: center;
+    width: 100px;
+    top: -40%;
+    padding: 5px;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+#firstDiv{
+    position:absolute;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    cursor:pointer;
+}
+
+#firstDiv img{
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+#firstDiv.closed{
+    animation-name: firstDivFadeOut;
+    animation-duration: 1s;
+    display: none;
+}
+
 @keyframes usrTurnAnim {
     50%{transform: scale(1.2); background-color: #6c1919;}
     100%{transform: scale(1)}
@@ -318,6 +411,21 @@ a{
 @keyframes lastCardAnim {
     50%{transform:scale(3)}
     100%{transform:scale(1)}
+}
+
+@keyframes settingsFadeIn {
+    0%{bottom: -30%}
+    100%{bottom: 0}
+}
+
+@keyframes settingsFadeOut {
+    0%{display: flex}
+    100%{bottom: -30%}
+}
+
+@keyframes firstDivFadeOut {
+    0%{display: grid}
+    100%{transform: scale(4); opacity: 0}
 }
 
 @media screen and (max-width: 900px){
@@ -339,11 +447,6 @@ a{
     .box.three {
         right: -125px;
         transform: translate(40%, -40%);
-    }
-    #chatBtn{
-        scale: 0.7;
-        top: 0;
-        left: 0;
     }
     .box.winner{
         transform: translate(-70%, 70%);

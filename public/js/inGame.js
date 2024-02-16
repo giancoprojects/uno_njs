@@ -296,6 +296,7 @@ function setCardOnTable(data){
     c.divComponent.style.transform = "translate(-100%, -50%)";
     document.getElementById("cardsTable").insertAdjacentElement("beforeend", c.divComponent);
     cardOnTable = c;
+    playCardAudio();
 }
 
 function removeCard(data){
@@ -430,6 +431,7 @@ function setLastCardState(player){
     img.src = "/imgs/logo.png";
     img.classList.add("lastCard");
     usernameDiv.insertAdjacentElement("afterbegin", img);
+    playUnoAudio();
 }
 
 function removeLastCardState(player){
