@@ -1,6 +1,6 @@
-let ingame_music = new Audio("audio/ingame_music.mp3");
-ingame_music.volume = 0.5;
-ingame_music.loop = true;
+let music = new Audio();
+music.volume = 0.5;
+music.loop = true;
 
 let uno_audio = new Audio("audio/uno.mp3");
 let card_audio = new Audio("audio/card.mp3");
@@ -79,12 +79,20 @@ function toggleMusic(){
     }
 }
 
-function playMusic(){
-    if(musicEnabled) ingame_music.play();
+function setMusic(type){
+    //TIPI: lobby | ingame
+    music.src = "audio/" + type + "_music.mp3";
+    if(firstInteraction) playMusic();
+    //playMusic();
 }
 
+function playMusic(){
+    if(musicEnabled) music.play();
+}
+
+
 function stopMusic(){
-    if(!musicEnabled) ingame_music.pause();
+    if(!musicEnabled) music.pause();
 }
 
 function playUnoAudio(){

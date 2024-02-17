@@ -22,6 +22,7 @@ function manageGameWait(data) {
 }
 
 function setupMenu(data) {
+    setMusic("lobby");
     console.log(data);
     // 0 da escludere.
     //init:12345:4:waiting|Pino|gino|lino

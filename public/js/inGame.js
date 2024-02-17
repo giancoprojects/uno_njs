@@ -276,6 +276,7 @@ function removePlayerIG(data){
 }
 
 function setTableSize(data){
+    setMusic("ingame");
     let dataSplitted = data.split(":");
     gameSize = parseInt(dataSplitted[1]); //convertire stringa in integer.
     if(gameSize === 2){
