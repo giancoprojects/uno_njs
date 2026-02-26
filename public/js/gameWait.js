@@ -1,3 +1,5 @@
+let gameStarting_interval = null;
+
 function manageGameWait(data) {
     if (data.includes('init')) {
         setupMenu(data);
@@ -76,12 +78,25 @@ function updatePlayerList(pl_list){
 }
 
 function setGameStarting(){
+    let seconds = 9;
     let elem = document.getElementById("gwState");
     elem.style.color = "green";
-    elem.innerHTML = "Avvio partita tra 10 secondi..";
+    gameStarting_interval = setInterval(() =>{
+        if(seconds == 0){
+            clearInterval(gameStarting_interval);
+            gameStarting_interval = null;
+            return;
+        }
+        elem.innerHTML = "Avvio partita tra " + seconds + " secondi..";
+        seconds--;
+    }, 1000);
 }
 
 function abortGameStarting(){
+    if(gameStarting_interval != null){
+        clearInterval(gameStarting_interval);
+        gameStarting_interval = null;
+    }
     let elem = document.getElementById("gwState");
     elem.style.color = "coral";
     elem.innerHTML = "In attesa giocatori..";
