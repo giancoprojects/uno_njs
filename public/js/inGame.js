@@ -73,6 +73,14 @@ class mainPlayer{
             }
         })
     }
+
+    setActivePlayer(){
+        document.getElementById(this.username + "_box").classList.add("currentTurn");
+    }
+
+    removeActivePlayer(){
+        document.getElementById(this.username+"_box").classList.remove("currentTurn");
+    }
 }
 
 
@@ -129,6 +137,7 @@ class otherPlayer{
         console.log("Dopo: " + this.cards.length);
         if(this.cards.length === 1) setLastCardState(this);
     }
+    
 }
 
 class card{
@@ -369,6 +378,7 @@ function startPlayerTurn(player, timestamp){
         // document.getElementById(player.username + "_cards")
         //     .classList.remove("disable");
         player.updateCardChoices();
+        player.setActivePlayer();
     }
 
     turnSched = setInterval(() =>{
@@ -389,6 +399,7 @@ function stopPlayerTurn(player){
         // document.getElementById(player.username + "_cards")
         //     .classList.add("disable");
         player.disableAllCards();
+        player.removeActivePlayer();
     }
     clearInterval(turnSched);
     playerTurn = null;

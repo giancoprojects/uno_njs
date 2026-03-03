@@ -174,6 +174,11 @@ a{
     left: 50%;
     bottom: 0;
 }
+
+.box.currentTurn{
+    padding: 20px;
+    border-bottom: 5px solid brown;
+}
 .box.one{
     left: 0;
     bottom: 50%;
@@ -199,6 +204,7 @@ a{
     transform: translate(-50%, 50%);
     transition: all ease-in-out 0.5s;
 }
+
 
 .usrInfo{
     display:grid;
@@ -428,7 +434,7 @@ a{
     100%{transform: scale(4); opacity: 0}
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px), (max-height: 600px){
     .box{
         scale: 0.7;
     }
