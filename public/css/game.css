@@ -435,26 +435,10 @@ a{
 }
 
 @media screen and (max-width: 900px), (max-height: 600px){
-    .box{
+    .usrCards, .otherCards, #colorChooser_cards{
         scale: 0.7;
-    }
-
-    .box.main{
-        transform:translate(-70%, 20%);
-    }
-
-    .box.two{
-        transform: translate(-70%, -20%);
-    }
-    .box.one {
-        left: -125px;
-        transform: translate(-40%, -40%);
-    }
-    .box.three {
-        right: -125px;
-        transform: translate(40%, -40%);
-    }
-    .box.winner{
-        transform: translate(-70%, 70%);
+        padding: 0;
     }
 }
+
+
