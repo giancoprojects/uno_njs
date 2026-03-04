@@ -439,6 +439,19 @@ a{
         scale: 0.7;
         padding: 0;
     }
+
+    .box.one{
+        left: -115px;
+    }
+
+    .box.three{
+        right: -115px;
+    }
+
+    .box.two{
+        top: -85px;
+    }
 }
+
 
 

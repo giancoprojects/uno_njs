@@ -107,7 +107,7 @@ class uno_game{
 
     //GENERA IL MAZZO
     generateGameDeck(){
-        let default_deck = [...cards.getDefaultDeck()];
+        let default_deck = new Array(...cards.getDefaultDeck());
         //La sintassi qui sopra serve per copiare un array non per riferimento ma per valore.
         //quindi qualunque cosa si modifica, non va a modificare l'array originale da culi
         //l'abbiamo preso.
@@ -334,6 +334,7 @@ class uno_game{
         console.log(this.currentTurn);
         this.turnTimestamp = Math.floor(Date.now() / 1000) + 30;
         this.igSched = setTimeout(() =>{
+            this.addCardToPlayer(this.getPlayerTurn(), 2);
             this.setCurrentTurn(1);
         }, 1000 * 30);
         this.sendSocketMsgToAll("ig","currentTurn:"+this.getPlayerTurn().username+":"+this.turnTimestamp);
