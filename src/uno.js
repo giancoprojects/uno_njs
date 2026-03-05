@@ -107,7 +107,8 @@ class uno_game{
 
     //GENERA IL MAZZO
     generateGameDeck(){
-        let default_deck = new Array(...cards.getDefaultDeck());
+        let default_deck = structuredClone(cards.getDefaultDeck());
+    
         //La sintassi qui sopra serve per copiare un array non per riferimento ma per valore.
         //quindi qualunque cosa si modifica, non va a modificare l'array originale da culi
         //l'abbiamo preso.
