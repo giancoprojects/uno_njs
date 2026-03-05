@@ -105,6 +105,8 @@ class otherPlayer{
             .setAttribute("id", this.username + "_username");
         document.getElementsByName("pl"+plIndex+ "_username")[0].innerHTML = 
         '<i class="fa-solid fa-user"></i> ' + this.username;
+        document.getElementsByName("pl"+plIndex+"_totalCards")[0]
+            .setAttribute('id', this.username + "_totalCards");
     }
     setupCards(){
         let plIndex;
@@ -112,8 +114,14 @@ class otherPlayer{
         else plIndex = players.indexOf(this);
         let plCards = document.getElementsByName("pl"+plIndex+"_cards")[0];
         plCards.setAttribute('id', this.username + "_cards");
-        for(let i = 1; i <= this.totalCards; i++) this.addCard();
+        if(this.totalCards > 3){
+            for(let i = 1; i <= 3; i++) this.addCard();
+        }
+        else{
+            for(let i = 1; i <= this.totalCards; i++) this.addCard();
+        }
         if(this.cards.length === 1) setLastCardState(this);
+        document.getElementById(this.username+"_totalCards").innerText = this.totalCards;
     }
 
     createCardDiv(){

@@ -154,9 +154,14 @@ a{
     position: absolute;
     /*border: 1px solid black;*/
     display:flex;
+    gap:10px;
     flex-direction: column;
     align-items: center;
     will-change: transform;
+}
+
+.box img{
+    height: 75px;
 }
 .box.table{
     left: 50%;
@@ -182,8 +187,7 @@ a{
 .box.one{
     left: 0;
     bottom: 50%;
-    transform: translate(-25%, -25%);
-    rotate: 270deg;
+    transform: translate(-25%, 25%);
 }
 
 .box.two{
@@ -194,8 +198,7 @@ a{
 .box.three{
     right: 0;
     bottom: 50%;
-    transform: translate(25%, -25%);
-    rotate: 90deg;
+    transform: translate(25%, 25%);
 }
 
 .box.winner{
@@ -224,23 +227,23 @@ a{
 }
 
 .usrCards, .otherCards, #colorChooser_cards{
-    padding: 20px;
+    width: 300px;
     display:flex;
-    transform: translateX(-20px);
+    transform: translateX(-10px);
     justify-content: center;
     align-items: center;
 }
 
 .card, .bCard{
     transition:all ease-in-out 0.3s;
-    width: 45px;
+    width: 25px;
     z-index: 1;
 }
 
 .card.player:hover{
     cursor: pointer;
     width: 100px;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
 }
 .card.player.disable{
     opacity: 0.5;
@@ -435,22 +438,7 @@ a{
 }
 
 @media screen and (max-width: 900px), (max-height: 600px){
-    .usrCards, .otherCards, #colorChooser_cards{
-        scale: 0.7;
-        padding: 0;
-    }
-
-    .box.one{
-        left: -115px;
-    }
-
-    .box.three{
-        right: -115px;
-    }
-
-    .box.two{
-        top: -85px;
-    }
+    
 }
 
 

@@ -334,7 +334,7 @@ class uno_game{
         console.log(this.currentTurn);
         this.turnTimestamp = Math.floor(Date.now() / 1000) + 30;
         this.igSched = setTimeout(() =>{
-            this.addCardToPlayer(this.getPlayerTurn(), 2);
+            //this.addCardToPlayer(this.getPlayerTurn(), 2);
             this.setCurrentTurn(1);
         }, 1000 * 30);
         this.sendSocketMsgToAll("ig","currentTurn:"+this.getPlayerTurn().username+":"+this.turnTimestamp);
